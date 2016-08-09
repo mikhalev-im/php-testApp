@@ -13,9 +13,6 @@ class Controller {
     $this->request = $request !== null ? $request : new Request();
     $this->response = $response !== null ? $response : new Response();
     $this->view = new View($this);
-  }
-  
-  public function beforeAction() {
     $this->getViewPath();
   }
 

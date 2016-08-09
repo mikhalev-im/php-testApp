@@ -11,10 +11,13 @@ class App {
   public function __construct() {
     $this->request = new Request();
     $this->response = new Response();
+
+    $this->controller = $this->request->params["controller"];
+    $this->method = $this->request->params["action"];
+    $this->args = $this->request->params["args"];
   }
 
   public function run() {
-    $this->splitUrl();
 
     if (empty($this->controller)) {
       $this->controller = 'MainController';
@@ -34,31 +37,16 @@ class App {
   }
 
   private function invoke($controller, $method = "index", $args = []) {
+
     $this->controller = new $controller($this->request, $this->response);
 
-    $this->controller->beforeAction();
     $this->controller->$method();
 
     return $this->response->send();
   }
 
-  private function splitUrl() {
-    $url = $this->request->url;
-
-    if (!empty($url)) {
-      $url = explode('/', filter_var(trim($url, '/'), FILTER_SANITIZE_URL));
-
-      $this->controller = !empty($url[0]) ? ucwords($url[0]).'Controller' : null;
-      $this->method = !empty($url[1]) ? $url[1] : null;
-
-      unset($url[0], $url[1]);
-
-      $this->args = !empty($url) ? array_values($url) : [];
-    }
-  }
-
   private function notFound() {
-    echo 'NOT FOUND 404';
+    echo '404 NOT FOUND';
     return;
   }
 
