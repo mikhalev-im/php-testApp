@@ -1,4 +1,6 @@
 <?php
-  class Model {
-    public function getData() {}
-  }
+
+
+class Model {
+  public function getData() {}
+}

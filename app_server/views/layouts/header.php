@@ -5,7 +5,9 @@
   <title>Test task</title>
   <link rel="stylesheet" href="/public/css/bootstrap.min.css">
   <link href="/public/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="/public/css/style.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/public/js/bootstrap.min.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -17,8 +19,3 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <?php include 'app_server/views/'.$contentView ?>
-
-  <script src="/public/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
