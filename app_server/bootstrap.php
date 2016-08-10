@@ -6,6 +6,7 @@ require_once 'core/Controller.php';
 require_once 'core/App.php';
 require_once 'core/Request.php';
 require_once 'core/Response.php';
+require_once 'core/Session.php';
 // controllers
 require_once 'controllers/MainController.php';
 require_once 'controllers/ProfileController.php';

@@ -18,14 +18,14 @@ class Request {
   public $local = "en";
 
   // session id
-  public $sessionId = null;
+  public $session = null;
 
   public function __construct() {
     $this->url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
     $this->query = $_GET;
     $this->splitUrl();
     $this->body = $_POST;
-    $this->sessionId = !empty(session_id()) ? session_id() : null;
+    $this->session = new Session();
   }
 
   private function splitUrl() {

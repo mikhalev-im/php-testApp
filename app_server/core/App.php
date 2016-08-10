@@ -38,6 +38,8 @@ class App {
 
   private function invoke($controller, $method = "index", $args = []) {
 
+    session_start();
+
     $this->controller = new $controller($this->request, $this->response);
 
     $this->controller->$method();

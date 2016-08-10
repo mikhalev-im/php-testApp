@@ -4,21 +4,36 @@ class Session {
   
   private $sessionId;
 
-  private function generateSessionId() {
-    
+  public function __construct() {
+    session_start();
+    $this->session_id = session_id();
+    $this->checkSessionExpire();
   }
 
-  private function getSessionId() {
-    return $this->sessionId;
+  public function setUserId($userId) {
+    $_SESSION['USER_ID'] = $userId;
+    return;
   }
 
-  private function checkSessionExpire() {
+  public function isLoggedIn() {
+    return isset($_SESSION['USER_ID']);
+  }
+
+  public function destroySession() {
+    session_unset();
+    session_destroy();
+    return;
+  }
+
+  public function checkSessionExpire() {
 
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-        // last request was more than 30 minutes ago
-        session_unset();     // unset $_SESSION variable for the run-time 
-        session_destroy();   // destroy session data in storage
+      // last request was more than 30 minutes ago
+      session_unset();     // unset $_SESSION variable for the run-time 
+      session_destroy();   // destroy session data in storage
     }
+
     $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+    return;
   }
 }
