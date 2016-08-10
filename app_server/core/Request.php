@@ -25,7 +25,7 @@ class Request {
 
   private function splitUrl() {
     if (!empty($this->url)) {
-      $urlSplit = explode('/', filter_var(trim($this->$url, '/'), FILTER_SANITIZE_URL));
+      $urlSplit = explode('/', filter_var(trim($this->url, '/'), FILTER_SANITIZE_URL));
 
       $this->params["controller"] = !empty($urlSplit[0]) ? ucwords($urlSplit[0]).'Controller' : null;
       $this->params["action"] = !empty($urlSplit[1]) ? $urlSplit[1] : null;
