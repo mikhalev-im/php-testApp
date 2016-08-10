@@ -9,3 +9,4 @@ require_once 'core/Response.php';
 // controllers
 require_once 'controllers/MainController.php';
 require_once 'controllers/ProfileController.php';
+require_once 'controllers/LoginController.php';

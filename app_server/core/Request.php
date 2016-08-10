@@ -15,12 +15,17 @@ class Request {
   public $url = "/";
 
   // user local
-  public $local = "ru";
+  public $local = "en";
+
+  // session id
+  public $sessionId = null;
 
   public function __construct() {
     $this->url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
     $this->query = $_GET;
     $this->splitUrl();
+    $this->body = $_POST;
+    $this->sessionId = !empty(session_id()) ? session_id() : null;
   }
 
   private function splitUrl() {

@@ -25,8 +25,8 @@
                             </button>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Twitter</a></li>
-                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                                <li><a href="#">Google +</a></li>
+                                <li><a href="#">Facebook</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#">Github</a></li>
                             </ul>

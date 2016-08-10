@@ -6,19 +6,19 @@
           <h3 class="panel-title">Login</h3>
         </div>
         <div class="panel-body">
-          <form method="POST" id="login">
+          <form method="POST" id="login" action="/login/login">
             <div class="form-group">
               <label for="inputEmail" class="sr-only">Email address</label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required focus>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required focus>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="sr-only">Password</label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
             </div>
             <div class="form-group">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="remember-me"> Remember me
+                  <input type="checkbox" value="remember-me" name="remember"> Remember me
                 </label>
               </div>
             </div>
@@ -32,22 +32,22 @@
               <p>Don't have an account? <a href="javascript:void(0)" class="register-link">Register!</a></p>
             </div>
           </form>
-          <form method="POST" class="hidden" id="register">
+          <form method="POST" class="hidden" id="register" action="/login/register">
             <div class="form-group">
               <label for="inputEmail" class="sr-only">User Name</label>
-              <input type="text" id="inputEmail" class="form-control" placeholder="User Name" required focus>
+              <input type="text" id="inputEmail" class="form-control" placeholder="User Name" name="username" required focus>
             </div>
             <div class="form-group">
               <label for="inputEmail" class="sr-only">Email address</label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required focus>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required focus>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="sr-only">Password</label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="sr-only">Password</label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Repeat Password" required>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Repeat Password" name="password-repeat" required>
             </div>
             <div class="form-group">
               <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
@@ -56,10 +56,10 @@
               <p>Already have an account? <a href="javascript:void(0)" class="login-link">Login!</a></p>
             </div>
           </form>
-          <form method="POST" class="hidden" id="restorePassword">
+          <form method="POST" class="hidden" id="restorePassword" action="/login/restore">
             <div class="form-group">
               <label for="inputEmail" class="sr-only">Email address</label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required focus>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required focus>
             </div>
             <div class="form-group">
               <button class="btn btn-lg btn-primary btn-block" type="submit">Restore</button>

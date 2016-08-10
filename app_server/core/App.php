@@ -42,11 +42,15 @@ class App {
 
     $this->controller->$method();
 
-    return $this->response->send();
+    $this->response->send();
+    
+    exit();
   }
 
   private function notFound() {
-    echo '404 NOT FOUND';
+    $this->response->setStatusCode(404);
+    $this->response->setContent('404 Content not found');
+    $this->response->send();
     return;
   }
 

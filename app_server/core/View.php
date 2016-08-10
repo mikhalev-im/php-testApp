@@ -25,7 +25,7 @@ class View {
     require_once $layoutDir . "footer.php";
     $renderedFile = ob_get_clean();
     
-    $this->controller->response->content = $renderedFile;
+    $this->controller->response->setContent($renderedFile);
     return $renderedFile; 
   }
 }
