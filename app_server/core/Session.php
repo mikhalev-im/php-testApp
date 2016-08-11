@@ -28,7 +28,9 @@ class Session {
   }
 
   public function destroySession() {
+    // unset $_SESSION variable for the run-time 
     session_unset();
+    // destroy session data in storage
     session_destroy();
     return;
   }
@@ -36,9 +38,7 @@ class Session {
   public function checkSessionExpire() {
 
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
-      // last request was more than 30 minutes ago
-      session_unset();     // unset $_SESSION variable for the run-time 
-      session_destroy();   // destroy session data in storage
+      $this->destroySession();
     }
 
     $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
