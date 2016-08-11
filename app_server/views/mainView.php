@@ -7,6 +7,11 @@
         </div>
         <div class="panel-body">
           <form method="POST" id="login" action="/login/login">
+            <?php 
+            if (isset($data['error'])) {
+              echo "<div class='alert alert-danger' role='alert'>" . $data['error'] . "</div>";
+            }
+            ?>
             <div class="form-group">
               <label for="inputEmail" class="sr-only">Email address</label>
               <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required focus>

@@ -19,6 +19,14 @@ class Session {
     return isset($_SESSION['USER_ID']);
   }
 
+  public function setPreviousPage($previousPage) {
+    return $_SESSION['PREVIOUS_PAGE'] = $previousPage;
+  }
+
+  public function getPreviousPage() {
+    return isset($_SESSION['PREVIOUS_PAGE']) ? $_SESSION['PREVIOUS_PAGE'] : null;
+  }
+
   public function destroySession() {
     session_unset();
     session_destroy();

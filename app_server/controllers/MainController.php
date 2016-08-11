@@ -3,7 +3,7 @@
 class MainController extends Controller {
 
   public function index() {
-    if ($_SESSION['remember']) {
+    if ($this->request->session->isLoggedIn()) {
       $this->response->setRedirect('http://localhost:8000/profile');
     }
 

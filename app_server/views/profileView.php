@@ -15,22 +15,11 @@
                             <br />
                             <i class="glyphicon glyphicon-globe"></i><a href="http://localhost:8000">localhost:8000</a>
                             <br />
-                            <i class="glyphicon glyphicon-gift"></i>October 23, 1991</p>
-                        <!-- Split button -->
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary">
-                                Social</button>
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span><span class="sr-only">Social</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="#">Google +</a></li>
-                                <li><a href="#">Facebook</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Github</a></li>
-                            </ul>
-                        </div>
+                            <i class="glyphicon glyphicon-gift"></i>October 23, 1991
+                        </p>
+                        <form action="/login/logout" method="POST">
+                            <button type="submit" class="btn btn-primary">Logout</button>
+                        </form>
                     </div>
                 </div>
             </div>
