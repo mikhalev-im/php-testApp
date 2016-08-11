@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
               <label for="inputPassword" class="sr-only"><?php echo $lc['password'];?></label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $lc['email'];?>" name="password" required>
+              <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $lc['password'];?>" name="password" required>
             </div>
             <div class="form-group">
               <div class="checkbox">
