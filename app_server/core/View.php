@@ -7,18 +7,14 @@ class View {
   public function __construct(Controller $controller) {
     $this->controller = $controller;
   }
-  
-  public function render($filePath, $data = null) {
-    
-    ob_start();
-    include $filePath . "";
-    $renderedFile = ob_get_clean();
-    $this->controller->response->content = $renderedFile;
-    return $renderedFile;
-  }
 
   public function renderWithLayout($layoutDir, $filePath, $data = null) {
-    
+    if (!isset($data['local'])) {
+      $data['local'] = 'ru';
+    }
+
+    $lc = $this->getDictionary($data['local']);
+
     ob_start();
     require_once $layoutDir . "header.php";
     require_once $filePath . "";
@@ -27,5 +23,9 @@ class View {
     
     $this->controller->response->setContent($renderedFile);
     return $renderedFile; 
+  }
+
+  private function getDictionary($local) {
+    return require_once ROOT_DIR . '/app_server/local/' . $local .'.php';
   }
 }

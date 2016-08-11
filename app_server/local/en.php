@@ -8,5 +8,12 @@ return array(
   'username' => 'User Name',
   'repeatPassword' => 'Repeat Password',
   'register' => 'Register',
-  'restore' => 'Restore'
+  'restore' => 'Restore',
+  'login' => 'Login',
+  'mustBeLoggedIn' => 'You must be logged in to access this page',
+  'incorrectLogin' => 'Incorrect email or password',
+  'forgetPassword' => 'Forgot your password',
+  'needAccaunt' => "Don't have an account",
+  'haveAccaunt' => 'Already have an accaunt',
+  'rememberPassword' => 'Do you remember your password'
 );
