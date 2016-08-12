@@ -16,8 +16,10 @@ class MainController extends Controller {
       $this->request->session->setPreviousPage('/');
       if (isset($this->request->body['switchToRu'])) {
         $this->request->session->setLanguage('ru');
+        $lang = 'ru';
       } elseif (isset($this->request->body['switchToEn'])) {
         $this->request->session->setLanguage('en');
+        $lang = 'en';
       }
       $this->view->renderWithLayout($this->layoutDir, $this->viewPath, ['language' => $lang]);
     }
