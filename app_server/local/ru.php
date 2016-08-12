@@ -18,5 +18,10 @@ return array(
   'rememberPassword' => 'Помните пароль',
   'headerLogin' => 'Вход',
   'headerRegister' => 'Регистрация',
-  'headerRestorePassword' => 'Восстановление пароля'
+  'headerRestorePassword' => 'Восстановление пароля',
+  'location' => 'Город',
+  'site' => 'Веб-сайт',
+  'dateOfBirth' => 'День рождения',
+  'avatar' => 'Аватар',
+  'requiredFields' => '* - обязательные поля'
 );

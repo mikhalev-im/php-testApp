@@ -30,12 +30,12 @@
           </div>
           <form method="POST" id="login" action="/login/login" data-header="<?php echo $lc['headerLogin'];?>">
             <div class="form-group">
-              <label for="inputEmail" class="sr-only"><?php echo $lc['email'];?></label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
+              <label for="loginEmail" class="sr-only"><?php echo $lc['email'];?></label>
+              <input type="email" id="loginEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
             </div>
             <div class="form-group">
-              <label for="inputPassword" class="sr-only"><?php echo $lc['password'];?></label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $lc['password'];?>" name="password" required>
+              <label for="loginPassword" class="sr-only"><?php echo $lc['password'];?></label>
+              <input type="password" id="loginPassword" class="form-control" placeholder="<?php echo $lc['password'];?>" name="password" required>
             </div>
             <div class="form-group">
               <div class="checkbox">
@@ -54,22 +54,39 @@
               <p><?php echo $lc['needAccaunt'];?>? <a href="javascript:void(0)" class="register-link"><?php echo $lc['register'];?>!</a></p>
             </div>
           </form>
-          <form method="POST" class="hidden" id="register" action="/login/register" data-header="<?php echo $lc['headerRegister'];?>">
+          <form enctype="multipart/form-data" method="POST" class="hidden" id="register" action="/login/register" data-header="<?php echo $lc['headerRegister'];?>">
             <div class="form-group">
-              <label for="inputEmail" class="sr-only"><?php echo $lc['username'];?></label>
-              <input type="text" id="inputEmail" class="form-control" placeholder="<?php echo $lc['username'];?>" name="username" required focus>
+              <label for="registerUsername" class="sr-only"><?php echo $lc['username'];?></label>
+              <input type="text" id="registerUsername" class="form-control" placeholder="<?php echo $lc['username'];?>" name="username" required focus>
             </div>
             <div class="form-group">
-              <label for="inputEmail" class="sr-only"><?php echo $lc['email'];?></label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
+              <label for="registerEmail" class="sr-only"><?php echo $lc['email'];?></label>
+              <input type="email" id="registerEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
             </div>
             <div class="form-group">
-              <label for="inputPassword" class="sr-only"><?php echo $lc['password'];?></label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $lc['password'];?>" name="password" required>
+              <label for="registerPassword" class="sr-only"><?php echo $lc['password'];?></label>
+              <input type="password" id="registerPassword" class="form-control" placeholder="<?php echo $lc['password'];?>" name="password" required>
             </div>
             <div class="form-group">
-              <label for="inputPassword" class="sr-only"><?php echo $lc['passwordRepeat'];?></label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="<?php echo $lc['repeatPassword'];?>" name="password-repeat" required>
+              <label for="registerPasswordRepeat" class="sr-only"><?php echo $lc['passwordRepeat'];?></label>
+              <input type="password" id="registerPasswordRepeat" class="form-control" placeholder="<?php echo $lc['repeatPassword'];?>" name="password-repeat" required>
+            </div>
+            <hr>
+            <div class="form-group">
+              <label for="registerLocation" class="sr-only"><?php echo $lc['location'];?></label>
+              <input type="text" id="registerLocation" class="form-control" placeholder="<?php echo $lc['location'];?>" name="location" focus>
+            </div>
+            <div class="form-group">
+              <label for="registerSite" class="sr-only"><?php echo $lc['site'];?></label>
+              <input type="text" id="registerSite" class="form-control" placeholder="<?php echo $lc['site'];?>" name="site" focus>
+            </div>
+            <div class="form-group">
+              <label for="registerBirth" class="sr-only"><?php echo $lc['dateOfBirth'];?></label>
+              <input type="text" id="registerBirth" class="form-control" placeholder="<?php echo $lc['dateOfBirth'];?>" name="dateOfBirth" focus>
+            </div>
+            <div class="form-group">
+              <input type="hidden" name="MAX_FILE_SIZE" value="1000">
+              <input type="file" name="avatar">
             </div>
             <div class="form-group">
               <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $lc['register'];?></button>
@@ -80,8 +97,8 @@
           </form>
           <form method="POST" class="hidden" id="restorePassword" action="/login/restore" data-header="<?php echo $lc['headerRestorePassword'];?>">
             <div class="form-group">
-              <label for="inputEmail" class="sr-only"><?php echo $lc['email'];?></label>
-              <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
+              <label for="restoreEmail" class="sr-only"><?php echo $lc['email'];?></label>
+              <input type="email" id="restoreEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
             </div>
             <div class="form-group">
               <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $lc['restore'];?></button>

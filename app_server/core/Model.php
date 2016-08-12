@@ -20,7 +20,7 @@ class Model {
   }
 
   protected function validateEmail($email) {
-
+    return (bool)filter_var($email, FILTER_VALIDATE_EMAIL);
   }
 
   protected function validateDate($date) {
@@ -28,7 +28,7 @@ class Model {
   }
 
   protected function validatePassword($string) {
-
+    return;
   }
 
   protected function validateLink($link) {

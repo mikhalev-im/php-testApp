@@ -18,5 +18,10 @@ return array(
   'rememberPassword' => 'Do you remember your password',
   'headerLogin' => 'Login',
   'headerRegister' => 'Register',
-  'headerRestorePassword' => 'Restore password'
+  'headerRestorePassword' => 'Restore password',
+  'location' => 'Location',
+  'site' => 'Website',
+  'dateOfBirth' => 'Date of birth',
+  'avatar' => 'Avatar',
+  'requiredFields' => '* - required fields'
 );

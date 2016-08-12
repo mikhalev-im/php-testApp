@@ -10,10 +10,8 @@ class MainController extends Controller {
       $this->response->setRedirect(Config::$homepage . '/profile');
     } elseif (!empty($err)) {
       $this->request->session->unsetError();
-      $this->request->session->setPreviousPage('/');
       $this->view->renderWithLayout($this->layoutDir, $this->viewPath, ['error' => $err, 'language' => $lang]);
     } else {
-      $this->request->session->setPreviousPage('/');
       if (isset($this->request->body['switchToRu'])) {
         $this->request->session->setLanguage('ru');
         $lang = 'ru';
