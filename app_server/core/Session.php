@@ -27,6 +27,29 @@ class Session {
     return isset($_SESSION['PREVIOUS_PAGE']) ? $_SESSION['PREVIOUS_PAGE'] : null;
   }
 
+  public function setLanguage($lang) {
+    $_SESSION['LANGUAGE'] = $lang;
+    return;
+  }
+
+  public function getLanguage() {
+    return isset($_SESSION['LANGUAGE']) ? $_SESSION['LANGUAGE'] : 'en';
+  }
+
+  public function setError($err) {
+    $_SESSION['ERROR'] = $err;
+    return;
+  }
+
+  public function unsetError() {
+    unset($_SESSION['ERROR']);
+    return;
+  }
+
+  public function getError() {
+    return isset($_SESSION['ERROR']) ? $_SESSION['ERROR'] : null;
+  }
+
   public function destroySession() {
     // unset $_SESSION variable for the run-time 
     session_unset();

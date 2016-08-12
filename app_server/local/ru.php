@@ -15,5 +15,8 @@ return array(
   'forgetPassword' => 'Забыли пароль',
   'needAccaunt' => "Нет аккаунта",
   'haveAccaunt' => 'Уже есть аккаунт',
-  'rememberPassword' => 'Помните пароль'
+  'rememberPassword' => 'Помните пароль',
+  'headerLogin' => 'Вход',
+  'headerRegister' => 'Регистрация',
+  'headerRestorePassword' => 'Восстановление пароля'
 );

@@ -17,3 +17,7 @@ small {
 .dropdown-menu {
   min-width: auto;
 }
+
+.panel-title {
+  line-height: 34px;
+}

@@ -9,11 +9,9 @@ class View {
   }
 
   public function renderWithLayout($layoutDir, $filePath, $data = null) {
-    if (!isset($data['local'])) {
-      $data['local'] = 'ru';
-    }
 
-    $lc = $this->getDictionary($data['local']);
+    $curLang = isset($data['language']) ? $data['language'] : 'en';
+    $lc = $this->getDictionary($curLang);
 
     ob_start();
     require_once $layoutDir . "header.php";
@@ -25,7 +23,7 @@ class View {
     return $renderedFile; 
   }
 
-  private function getDictionary($local) {
-    return require_once ROOT_DIR . '/app_server/local/' . $local .'.php';
+  private function getDictionary($lang) {
+    return require_once ROOT_DIR . '/app_server/local/' . $lang .'.php';
   }
 }

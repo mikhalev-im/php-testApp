@@ -3,15 +3,32 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Login</h3>
+          <div class="row">
+            <div class="col-xs-8">
+              <h3 class="panel-title"><?php echo $lc['headerLogin'];?></h3>
+            </div>
+            <div class="col-xs-4">
+              <form action="/" method="POST" class="pull-right" id="langForm">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo strtoupper($curLang);?> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#"><?php echo $curLang == 'en' ? 'RU' : 'EN';?></a></li>
+                  </ul>
+                </div>
+                <input type="hidden" name="switchTo<?php echo $curLang == 'en' ? 'Ru' : 'En';?>" value="do">
+              </form>
+            </div>
+          </div>
         </div>
         <div class="panel-body">
           <div class="alert alert-danger <?php if (!isset($data['error'])) echo 'hidden' ?>" role="alert">
             <?php
-              echo $data['error'];
+              echo $lc[$data['error']];
             ?>
           </div>
-          <form method="POST" id="login" action="/login/login">
+          <form method="POST" id="login" action="/login/login" data-header="<?php echo $lc['headerLogin'];?>">
             <div class="form-group">
               <label for="inputEmail" class="sr-only"><?php echo $lc['email'];?></label>
               <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
@@ -37,7 +54,7 @@
               <p><?php echo $lc['needAccaunt'];?>? <a href="javascript:void(0)" class="register-link"><?php echo $lc['register'];?>!</a></p>
             </div>
           </form>
-          <form method="POST" class="hidden" id="register" action="/login/register">
+          <form method="POST" class="hidden" id="register" action="/login/register" data-header="<?php echo $lc['headerRegister'];?>">
             <div class="form-group">
               <label for="inputEmail" class="sr-only"><?php echo $lc['username'];?></label>
               <input type="text" id="inputEmail" class="form-control" placeholder="<?php echo $lc['username'];?>" name="username" required focus>
@@ -61,7 +78,7 @@
               <p><?php echo $lc['haveAccaunt'];?>? <a href="javascript:void(0)" class="login-link"><?php echo $lc['login'];?>!</a></p>
             </div>
           </form>
-          <form method="POST" class="hidden" id="restorePassword" action="/login/restore">
+          <form method="POST" class="hidden" id="restorePassword" action="/login/restore" data-header="<?php echo $lc['headerRestorePassword'];?>">
             <div class="form-group">
               <label for="inputEmail" class="sr-only"><?php echo $lc['email'];?></label>
               <input type="email" id="inputEmail" class="form-control" placeholder="<?php echo $lc['email'];?>" name="email" required focus>
@@ -71,16 +88,6 @@
             </div>
             <div class="form-group">
               <p><?php echo $lc['rememberPassword'];?>? <a href="javascript:void(0)" class="login-link"><?php echo $lc['login'];?>!</a></p>
-            </div>
-          </form>
-          <form action="/" method="POST" class="pull-right">
-            <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                RU <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">EN</a></li>
-              </ul>
             </div>
           </form>
         </div>

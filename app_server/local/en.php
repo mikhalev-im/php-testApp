@@ -15,5 +15,8 @@ return array(
   'forgetPassword' => 'Forgot your password',
   'needAccaunt' => "Don't have an account",
   'haveAccaunt' => 'Already have an accaunt',
-  'rememberPassword' => 'Do you remember your password'
+  'rememberPassword' => 'Do you remember your password',
+  'headerLogin' => 'Login',
+  'headerRegister' => 'Register',
+  'headerRestorePassword' => 'Restore password'
 );

@@ -18,10 +18,10 @@ class LoginController extends Controller {
     if ($email == 'c1one@yandex.ru' && $password == 'password') {
       $this->request->session->setUserId('c1one@yandex.ru');
       $this->response->setStatusCode(302);
-      $this->response->setRedirect('http://localhost:8000/profile');
+      $this->response->setRedirect(Config::$homepage . '/profile');
     } else {
-      $this->response->setStatusCode(401);
-      $this->view->renderWithLayout($this->layoutDir, $this->loginPage, ['error' => 'Incorrect email or password']);
+      $this->request->session->setError('incorrectLogin');
+      $this->response->setRedirect(Config::$homepage);
     }
 
   }
@@ -37,6 +37,6 @@ class LoginController extends Controller {
   public function logout() {
     $this->request->session->destroySession();
     $this->response->setStatusCode(302);
-    $this->response->setRedirect('http://localhost:8000/');
+    $this->response->setRedirect(Config::$homepage);
   }
 }
