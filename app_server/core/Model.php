@@ -10,13 +10,14 @@ class Model {
   ];
 
   public function __construct() {
-    $user = Config::db['user'];
-    $pass = Config::db['pass'];
-    $dbname = Config::db['dbname'];
-    $charset = Config::db['charset'];
+    $user = Config::$db['user'];
+    $pass = Config::$db['pass'];
+    $dbname = Config::$db['dbname'];
+    $charset = Config::$db['charset'];
+    $host = Config::$db['host'];
 
     $this->dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=' . $charset;
-    $this->pdo = new PDO($this->dsn, $user, $pass, $options);
+    $this->pdo = new PDO($this->dsn, $user, $pass, $this->options);
   }
 
   protected function validateEmail($email) {
@@ -24,7 +25,8 @@ class Model {
   }
 
   protected function validateDate($date) {
-
+    $date_arr = explode('-', $date);
+    return (bool)checkdate($date_arr[1], $date_arr[2], $date_arr[0]);
   }
 
   protected function validatePassword($string) {
@@ -32,7 +34,7 @@ class Model {
   }
 
   protected function validateLink($link) {
-
+    return (bool)filter_var($link, FILTER_VALIDATE_URL);
   }
 
   protected function validateUserName($name) {

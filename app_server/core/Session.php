@@ -16,7 +16,7 @@ class Session {
   }
 
   public function isLoggedIn() {
-    return isset($_SESSION['USER_ID']);
+    return isset($_SESSION['USER_ID']) ? $_SESSION['USER_ID'] : false;
   }
 
   public function setLanguage($lang) {

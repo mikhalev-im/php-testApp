@@ -7,15 +7,15 @@
                         <img src="/public/img/380x500.png" alt="" class="img-rounded img-responsive" />
                     </div>
                     <div class="col-sm-6 col-md-8">
-                        <h4>Igor Mikhalev</h4>
-                        <small><cite title="Syktyvkar, Russia">Syktyvkar, Russia <i class="glyphicon glyphicon-map-marker">
+                        <h4><?php echo $data['username'];?></h4>
+                        <small><cite title="Syktyvkar, Russia"><?php echo $data['location'];?> <i class="glyphicon glyphicon-map-marker">
                         </i></cite></small>
                         <p>
-                            <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                            <i class="glyphicon glyphicon-envelope"></i><?php echo $data['email'];?>
                             <br />
-                            <i class="glyphicon glyphicon-globe"></i><a href="http://localhost:8000">localhost:8000</a>
+                            <i class="glyphicon glyphicon-globe"></i><a href="http://localhost:8000"><?php echo $data['website'];?></a>
                             <br />
-                            <i class="glyphicon glyphicon-gift"></i>October 23, 1991
+                            <i class="glyphicon glyphicon-gift"></i><?php echo $data['birthdate'];?>
                         </p>
                         <form action="/login/logout" method="POST">
                             <button type="submit" class="btn btn-primary">Logout</button>

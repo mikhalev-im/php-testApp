@@ -69,7 +69,7 @@
             </div>
             <div class="form-group">
               <label for="registerPasswordRepeat" class="sr-only"><?php echo $lc['passwordRepeat'];?></label>
-              <input type="password" id="registerPasswordRepeat" class="form-control" placeholder="<?php echo $lc['repeatPassword'];?>" name="password-repeat" required>
+              <input type="password" id="registerPasswordRepeat" class="form-control" placeholder="<?php echo $lc['repeatPassword'];?>" name="passwordRepeat" required>
             </div>
             <hr>
             <div class="form-group">
@@ -78,11 +78,11 @@
             </div>
             <div class="form-group">
               <label for="registerSite" class="sr-only"><?php echo $lc['site'];?></label>
-              <input type="text" id="registerSite" class="form-control" placeholder="<?php echo $lc['site'];?>" name="site" focus>
+              <input type="text" id="registerSite" class="form-control" placeholder="<?php echo $lc['site'];?>" name="website" focus>
             </div>
             <div class="form-group">
               <label for="registerBirth" class="sr-only"><?php echo $lc['dateOfBirth'];?></label>
-              <input type="text" id="registerBirth" class="form-control" placeholder="<?php echo $lc['dateOfBirth'];?>" name="dateOfBirth" focus>
+              <input type="date" id="registerBirth" class="form-control" placeholder="<?php echo $lc['dateOfBirth'];?>" name="dateOfBirth" focus>
             </div>
             <div class="form-group">
               <input type="hidden" name="MAX_FILE_SIZE" value="1000">
